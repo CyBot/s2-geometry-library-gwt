@@ -254,13 +254,13 @@ public final strictfp class S2Cell implements S2Region {
   // //////////////////////////////////////////////////////////////////////
   // S2Region interface (see {@code S2Region} for details):
 
-  @Override
+  //@Override
   public S2Region clone() {
     S2Cell clone = new S2Cell();
     clone.face = this.face;
     clone.level = this.level;
     clone.orientation = this.orientation;
-    clone.uv = this.uv.clone();
+    clone.uv = Utils.ArrayClone(this.uv);
 
     return clone;
   }

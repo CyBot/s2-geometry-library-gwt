@@ -612,7 +612,7 @@ public strictfp class S2LatLngRect implements S2Region {
     // rectangles that are larger than 180 degrees, we punt and always return a
     // bounding cap centered at one of the two poles.
     double lngSpan = lng.hi() - lng.lo();
-    if (Math.IEEEremainder(lngSpan, 2 * S2.M_PI) >= 0) {
+    if (Utils.IEEEremainder(lngSpan, 2 * S2.M_PI) >= 0) {
       if (lngSpan < 2 * S2.M_PI) {
         S2Cap midCap = S2Cap.fromAxisAngle(getCenter().toPoint(), S1Angle
           .radians(0));

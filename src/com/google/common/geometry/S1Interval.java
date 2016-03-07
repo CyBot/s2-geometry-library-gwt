@@ -356,8 +356,8 @@ public final strictfp class S1Interval implements Cloneable {
     }
 
     // NOTE(dbeaumont): Should this remainder be 2 * M_PI or just M_PI ??
-    double lo = Math.IEEEremainder(lo() - radius, 2 * S2.M_PI);
-    double hi = Math.IEEEremainder(hi() + radius, 2 * S2.M_PI);
+    double lo = Utils.IEEEremainder(lo() - radius, 2 * S2.M_PI);
+    double hi = Utils.IEEEremainder(hi() + radius, 2 * S2.M_PI);
     if (lo == -S2.M_PI) {
       lo = S2.M_PI;
     }
@@ -457,8 +457,8 @@ public final strictfp class S1Interval implements Cloneable {
     if (y.isEmpty()) {
       return getLength() <= maxError;
     }
-    return (Math.abs(Math.IEEEremainder(y.lo() - lo(), 2 * S2.M_PI))
-        + Math.abs(Math.IEEEremainder(y.hi() - hi(), 2 * S2.M_PI))) <= maxError;
+    return (Math.abs(Utils.IEEEremainder(y.lo() - lo(), 2 * S2.M_PI))
+        + Math.abs(Utils.IEEEremainder(y.hi() - hi(), 2 * S2.M_PI))) <= maxError;
   }
 
   public boolean approxEquals(final S1Interval y) {

@@ -158,7 +158,7 @@ public strictfp class S2LatLng {
     // drem(x, 2 * S2.M_PI) reduces its argument to the range
     // [-S2.M_PI, S2.M_PI] inclusive, which is what we want here.
     return new S2LatLng(Math.max(-S2.M_PI_2, Math.min(S2.M_PI_2, lat().radians())),
-        Math.IEEEremainder(lng().radians(), 2 * S2.M_PI));
+        Utils.IEEEremainder(lng().radians(), 2 * S2.M_PI));
   }
 
   // Clamps the latitude to the range [-90, 90] degrees, and adds or subtracts

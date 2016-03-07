@@ -282,9 +282,9 @@ public final strictfp class S2Cap implements S2Region {
       double sinC = Math.cos(axisLatLng.lat().radians());
       if (sinA <= sinC) {
         double angleA = Math.asin(sinA / sinC);
-        lng[0] = Math.IEEEremainder(axisLatLng.lng().radians() - angleA,
+        lng[0] = Utils.IEEEremainder(axisLatLng.lng().radians() - angleA,
           2 * S2.M_PI);
-        lng[1] = Math.IEEEremainder(axisLatLng.lng().radians() + angleA,
+        lng[1] = Utils.IEEEremainder(axisLatLng.lng().radians() + angleA,
           2 * S2.M_PI);
       }
     }

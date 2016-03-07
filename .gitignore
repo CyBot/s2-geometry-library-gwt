@@ -1,2 +1,2 @@
-
-build/
+war/WEB-INF/deploy/
+gwt-unitCache
